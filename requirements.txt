@@ -29,8 +29,7 @@ cachetools==5.5.0
 celery==5.4.0
 certifi==2024.8.30
 cffi==1.17.1
-charset-normalizer==3.4.0
--e git+https://github.com/muhammadadilnaeem/Chest-Cancer-Classification-Using-MLflow-and-DVC.git@e5e5649f6407892f383865a4ab1c07941d6f9b64#egg=chest_cancer_classifier
+charset-normalizer==3.4.0 
 click==8.1.7
 click-didyoumean==0.3.1
 click-plugins==1.1.1
