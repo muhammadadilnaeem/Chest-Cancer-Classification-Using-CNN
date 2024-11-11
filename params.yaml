@@ -12,7 +12,7 @@ BATCH_SIZE: 16
 INCLUDE_TOP: False  # Useful when using transfer learning without the top layer
 
 # Number of epochs for training the model
-EPOCHS: 1
+EPOCHS: 5
 
 # Number of classes in the classification task
 CLASSES: 2  # Example: binary classification (e.g., 0 and 1)
