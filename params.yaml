@@ -1,0 +1,24 @@
+
+# Enable or disable data augmentation for training
+AUGMENTATION: True
+
+# Specify the input image size as required by the VGG16 model
+IMAGE_SIZE: [224, 224, 3]  # Height, Width, Channels (RGB)
+
+# Define the batch size for training
+BATCH_SIZE: 16
+
+# Indicate whether to include the top classification layer of the model
+INCLUDE_TOP: False  # Useful when using transfer learning without the top layer
+
+# Number of epochs for training the model
+EPOCHS: 1
+
+# Number of classes in the classification task
+CLASSES: 2  # Example: binary classification (e.g., 0 and 1)
+
+# Pre-trained weights to use for the model
+WEIGHTS: imagenet  # This indicates using ImageNet weights for transfer learning
+
+# Set the learning rate for the optimizer
+LEARNING_RATE: 0.01  # Controls how much to adjust weights during training
