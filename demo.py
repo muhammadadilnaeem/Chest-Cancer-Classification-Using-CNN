@@ -1,19 +1,40 @@
-import numpy as np
-from sklearn.linear_model import LogisticRegression
+from src.chest_cancer_classifier import logger
+from chest_cancer_classifier.pipeline.stage_1_data_ingestion import DataIngestionTrainingPipeline
+from chest_cancer_classifier.pipeline.stage_2_prepare_base_model import PrepareBaseModelTrainingPipeline
 
-import mlflow
-import mlflow.sklearn
-from mlflow.models import infer_signature
+# Define the name of the current stage in the data processing pipeline
+STAGE_NAME = "Data Ingestion stage"
 
-if __name__ == "__main__":
-    X = np.array([-2, -1, 0, 1, 2, 1]).reshape(-1, 1)
-    y = np.array([0, 0, 1, 1, 1, 0])
-    lr = LogisticRegression()
-    lr.fit(X, y)
-    score = lr.score(X, y)
-    print(f"Score: {score}")
-    mlflow.log_metric("score", score)
-    predictions = lr.predict(X)
-    signature = infer_signature(X, predictions)
-    mlflow.sklearn.log_model(lr, "model", signature=signature, input_example=X)
-    print(f"Model saved in run {mlflow.active_run().info.run_uuid}")
+try:
+        # Log the start of the data ingestion stage
+        logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+        # Create an instance of the DataIngestionTrainingPipeline
+        obj = DataIngestionTrainingPipeline()
+        # Execute the main process of the data ingestion pipeline
+        obj.main()
+        # Log the successful completion of the data ingestion stage
+        logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+        # Log any exceptions that occur during the execution
+        logger.exception(e)
+        raise e  # Reraise the exception for further handling if necessary
+
+
+# Define the name of the current stage in the data processing pipeline
+STAGE_NAME = "Prepare Base Model stage"
+
+try:
+        # Log the start of the stage
+        logger.info(f"*******************")
+        logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+        
+        # Create an instance of the training pipeline and run the main method
+        obj = PrepareBaseModelTrainingPipeline()
+        obj.main()
+        
+        # Log the completion of the stage
+        logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+        # Log any exceptions that occur during the execution
+        logger.exception(e)
+        raise e  # Reraise the exception for further handling
