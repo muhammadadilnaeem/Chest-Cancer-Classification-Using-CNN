@@ -6,7 +6,7 @@ from src.chest_cancer_classifier.entity.config_entity import (DataIngestionConfi
                                                               TrainingConfig,
                                                               EvaluationConfig)
 
-from src.chest_cancer_classifier.utils.common_functions import read_yaml, create_directories  # Import utility functions for reading YAML files and creating directories
+from src.chest_cancer_classifier.utils.common_functions import read_yaml, create_directories,save_json  # Import utility functions for reading YAML files and creating directories
 
 from src.chest_cancer_classifier.constants import *  # Import all constants defined in the constants module
 import os  # Import the os module
@@ -112,31 +112,3 @@ class ConfigurationManager:
         # Return the evaluation configuration object
         return eval_config
     
-    def get_training_config(self) -> TrainingConfig:
-        # Retrieve training configuration details from the loaded config
-        training = self.config.training
-        prepare_base_model = self.config.prepare_base_model
-        params = self.params
-        
-        # Define the path to the training data
-        training_data = os.path.join(self.config.data_ingestion.unzip_dir, "Chest-CT-Scan-data")
-        
-        # Create the root directory for training if it does not exist
-        create_directories([
-            Path(training.root_dir)
-        ])
-
-        # Create a TrainingConfig object with the relevant parameters
-        training_config = TrainingConfig(
-            root_dir=Path(training.root_dir),  # Root directory for training
-            trained_model_path=Path(training.trained_model_path),  # Path to save the trained model
-            updated_base_model_path=Path(prepare_base_model.updated_base_model_path),  # Path for the updated base model
-            training_data=Path(training_data),  # Path to the training data
-            params_epochs=params.EPOCHS,  # Number of epochs for training
-            params_batch_size=params.BATCH_SIZE,  # Batch size for training
-            params_is_augmentation=params.AUGMENTATION,  # Whether to use data augmentation
-            params_image_size=params.IMAGE_SIZE  # Size of the images for training
-        )
-
-        # Return the constructed training configuration
-        return training_config
