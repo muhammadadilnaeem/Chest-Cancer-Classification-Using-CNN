@@ -1,8 +1,8 @@
 
 # LIBRARIES IMPORT
-from src.chest_cancer_classifier.config.configuration import ConfigurationManager
-from src.chest_cancer_classifier.components.model_trainer import Training
-from src.chest_cancer_classifier import logger
+from chest_cancer_classifier.config.configuration import ConfigurationManager
+from chest_cancer_classifier.components.model_trainer import Training
+from chest_cancer_classifier import logger
 
 # Define the name of the stage for logging and tracking purposes
 STAGE_NAME = "Model Training"
