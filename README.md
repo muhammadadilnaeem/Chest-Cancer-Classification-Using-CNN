@@ -21,4 +21,9 @@ This repository will contain source code of Chest Cancer Classification Using ML
 
 - Dataset link : https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images 
 
+- In this project we used mlflow for tracking deep learning experriments and model.
+
+- Also we used DVC( Data Version Control) for project pipeline tracking.
+
+
 -------
