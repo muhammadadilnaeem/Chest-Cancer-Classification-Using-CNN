@@ -6,7 +6,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 from chest_cancer_classifier.constants import *
 from chest_cancer_classifier.utils.common_functions import read_yaml, create_directories, save_json
-from src.chest_cancer_classifier.entity.config_entity import EvaluationConfig
+from chest_cancer_classifier.entity.config_entity import EvaluationConfig
 
 
 class Evaluation:
