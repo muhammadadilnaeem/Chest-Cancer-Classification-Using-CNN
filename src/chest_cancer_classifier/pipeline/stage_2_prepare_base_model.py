@@ -1,7 +1,7 @@
 
-from src.chest_cancer_classifier.config.configuration import ConfigurationManager
-from src.chest_cancer_classifier.components.prepare_base_models import PrepareBaseModel
-from src.chest_cancer_classifier import logger
+from chest_cancer_classifier.config.configuration import ConfigurationManager
+from chest_cancer_classifier.components.prepare_base_models import PrepareBaseModel
+from chest_cancer_classifier import logger
 
 # Define the name of the stage for logging and tracking purposes
 STAGE_NAME = "Prepare base model"
