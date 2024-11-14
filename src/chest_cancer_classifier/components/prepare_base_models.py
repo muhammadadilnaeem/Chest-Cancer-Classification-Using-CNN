@@ -4,7 +4,7 @@ import tensorflow as tf
 from pathlib import Path
 from zipfile import ZipFile
 import urllib.request as request
-from src.chest_cancer_classifier.entity.config_entity import (DataIngestionConfig,
+from chest_cancer_classifier.entity.config_entity import (DataIngestionConfig,
                                                               PrepareBaseModelConfig,
                                                               TrainingConfig,
                                                               EvaluationConfig)
