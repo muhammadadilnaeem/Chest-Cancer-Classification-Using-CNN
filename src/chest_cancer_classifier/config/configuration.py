@@ -1,14 +1,14 @@
 
 # Import necessary modules and classes from the chest_cancer_classifier package
-from src.chest_cancer_classifier import *  # Import all components from the chest_cancer_classifier module
-from src.chest_cancer_classifier.entity.config_entity import (DataIngestionConfig,
+from chest_cancer_classifier import *  # Import all components from the chest_cancer_classifier module
+from chest_cancer_classifier.entity.config_entity import (DataIngestionConfig,
                                                               PrepareBaseModelConfig,
                                                               TrainingConfig,
                                                               EvaluationConfig)
 
-from src.chest_cancer_classifier.utils.common_functions import read_yaml, create_directories,save_json  # Import utility functions for reading YAML files and creating directories
+from chest_cancer_classifier.utils.common_functions import read_yaml, create_directories,save_json  # Import utility functions for reading YAML files and creating directories
 
-from src.chest_cancer_classifier.constants import *  # Import all constants defined in the constants module
+from chest_cancer_classifier.constants import *  # Import all constants defined in the constants module
 import os  # Import the os module
 
 # ConfigurationManager class to manage configuration settings for the project
