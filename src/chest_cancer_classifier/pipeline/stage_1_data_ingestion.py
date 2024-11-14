@@ -1,7 +1,8 @@
 
-from src.chest_cancer_classifier import logger
-from src.chest_cancer_classifier.components.data_ingestion import DataIngestion
-from src.chest_cancer_classifier.config.configuration import DataIngestionConfig,ConfigurationManager
+
+from chest_cancer_classifier import logger
+from chest_cancer_classifier.components.data_ingestion import DataIngestion
+from chest_cancer_classifier.config.configuration import DataIngestionConfig, ConfigurationManager
 
 # Define the name of the current stage in the data processing pipeline
 STAGE_NAME = "Data Ingestion stage"
