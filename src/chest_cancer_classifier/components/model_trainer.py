@@ -6,7 +6,7 @@ import tensorflow as tf
 from pathlib import Path
 from zipfile import ZipFile
 import urllib.request as request
-from src.chest_cancer_classifier.entity.config_entity import TrainingConfig
+from chest_cancer_classifier.entity.config_entity import TrainingConfig
 
 class Training:
     def __init__(self, config: TrainingConfig):
