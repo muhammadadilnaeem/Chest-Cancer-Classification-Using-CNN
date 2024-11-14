@@ -1,9 +1,9 @@
 import os  # Import the os module for operating system functionalities
 import zipfile  # Import the zipfile module to handle ZIP file extraction
 import gdown  # Import gdown for downloading files from Google Drive
-from src.chest_cancer_classifier import logger  # Import the logger for logging events
-from src.chest_cancer_classifier.utils.common_functions import get_size  # Import utility function to get file size
-from src.chest_cancer_classifier.entity.config_entity import DataIngestionConfig  # Import the DataIngestionConfig class
+from chest_cancer_classifier import logger  # Import the logger for logging events
+from chest_cancer_classifier.utils.common_functions import get_size  # Import utility function to get file size
+from chest_cancer_classifier.entity.config_entity import DataIngestionConfig  # Import the DataIngestionConfig class
 
 import requests
 from requests.adapters import HTTPAdapter
