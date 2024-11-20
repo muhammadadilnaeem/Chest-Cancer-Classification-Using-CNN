@@ -37,5 +37,12 @@ Then for pipeline tracking we will use this command
 dvc repro
 ```
 
+After this we will write another command tosee how dvc tracked dependency of our project Pipeline.
+
+```python
+dvc dag
+```
+
+
 
 -------
