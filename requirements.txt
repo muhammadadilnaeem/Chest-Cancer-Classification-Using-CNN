@@ -33,7 +33,6 @@ celery==5.4.0
 certifi==2024.8.30
 cffi==1.17.1
 charset-normalizer==3.4.0
--e git+https://github.com/muhammadadilnaeem/Chest-Cancer-Classification-Using-MLflow-and-DVC.git@2e3584e4d19294ac3561b49290da9250d611ed1d#egg=chest_cancer_classifier
 click==8.1.7
 click-didyoumean==0.3.1
 click-plugins==1.1.1
@@ -268,3 +267,4 @@ wrapt==1.16.0
 yarl==1.17.1
 zc.lockfile==3.0.post1
 zipp==3.20.2
+-e .
