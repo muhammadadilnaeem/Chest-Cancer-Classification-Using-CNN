@@ -25,5 +25,17 @@ This repository will contain source code of Chest Cancer Classification Using ML
 
 - Also we used DVC( Data Version Control) for project pipeline tracking.
 
+First we use command to initiate project
+
+```python
+dvc init
+```
+
+Then for pipeline tracking we will use this command
+
+```python
+dvc repro
+```
+
 
 -------
