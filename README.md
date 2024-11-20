@@ -257,6 +257,6 @@ This project is inspired by real-world challenges in medical image analysis. It 
 
 ## Disclaimer
 
-This project is created **solely for practice and learning purposes**. It is not intended for clinical or production use. The models and results are not validated for real-world medical applications.
+This project is created **solely for practice and learning purposes**. It is not intended for clinical or production use. The models and results are not validated for real-world medical applications. This project is inspired from [this youtube vedio](https://youtu.be/-NOIWzjJK-4?si=37m-vc_ESKi1pjV0) .
 
 ---
