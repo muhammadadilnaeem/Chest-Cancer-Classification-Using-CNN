@@ -267,4 +267,4 @@ wrapt==1.16.0
 yarl==1.17.1
 zc.lockfile==3.0.post1
 zipp==3.20.2
--e .
+# -e .
