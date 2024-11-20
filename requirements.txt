@@ -270,6 +270,6 @@
 # zipp==3.20.2
 
 
-streamlit
-numpy
-tensorflow
+streamlit==1.40.0
+numpy==2.0.2
+tensorflow==2.18.0
