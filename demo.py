@@ -406,7 +406,7 @@ class PredictionPipeline:
         return ("Normal" if result[0] == 1 else "Adenocarcinoma Cancer", confidence)
 
 # Initialize model
-MODEL_PATH = r"artifacts/training/model.h5"
+MODEL_PATH = r"model/model.h5"
 pipeline = PredictionPipeline(MODEL_PATH)
 
 if uploaded_file:
