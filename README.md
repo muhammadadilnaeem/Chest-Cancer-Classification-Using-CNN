@@ -5,6 +5,10 @@
 
 This repository demonstrates the implementation of a **chest cancer classification** pipeline using machine learning techniques. It integrates **MLflow** for experiment tracking and **DVC (Data Version Control)** for managing datasets and models. The project showcases an end-to-end machine learning pipeline, including CI/CD deployment to AWS using GitHub Actions.
 
+
+https://github.com/user-attachments/assets/96fc046d-6598-445e-baaf-4ade6296000c
+
+
 > **Note**: This is a practice project and is not intended for clinical or production use.
 
 ---
