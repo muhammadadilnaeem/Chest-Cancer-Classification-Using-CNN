@@ -474,7 +474,7 @@
         - `data_ingestion.py`.
         - `prepare_base_models.py`.
         - `model_trainer.py`.
-        - `prepare_base_models.py`.
+        - `model_evaluation_with_mlflow.py`.
 
     7. **Update the Pipeline**:  
     Integrate components in `src/pipeline` to define end-to-end workflows (e.g., data processing to model inference).
