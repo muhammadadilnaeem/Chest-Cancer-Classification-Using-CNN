@@ -40,6 +40,7 @@ class TrainingConfig:
 class EvaluationConfig:
     path_of_model: Path  # Path to the model to be evaluated
     training_data: Path  # Path to the training dataset used for evaluation
+    validation_data_dir: Path  # Path to the validation dataset directory
     all_params: dict  # Dictionary containing all relevant parameters for evaluation
     mlflow_uri: str  # URI for MLflow tracking server
     params_image_size: list  # Image dimensions for input to the model
