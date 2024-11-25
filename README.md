@@ -1,7 +1,7 @@
 
 -----
 
-# Chest Cancer Classification Using MLflow and DVC
+# **`Chest Cancer Classification Using MLflow and DVC`**
 
 This repository demonstrates the implementation of a **chest cancer classification** pipeline using machine learning techniques for **multi class calssification**. It integrates **MLflow** for experiment tracking and **DVC (Data Version Control)** for managing datasets and models. The project showcases an end-to-end machine learning pipeline, including CI/CD deployment to AWS using GitHub Actions.
 
@@ -15,7 +15,7 @@ https://github.com/user-attachments/assets/96fc046d-6598-445e-baaf-4ade6296000c
 
 ## Table of Contents
 
-- [Chest Cancer Classification Using MLflow and DVC](#chest-cancer-classification-using-mlflow-and-dvc)
+- [**`Chest Cancer Classification Using MLflow and DVC`**](#chest-cancer-classification-using-mlflow-and-dvc)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [Features](#features)
