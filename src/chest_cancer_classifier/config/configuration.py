@@ -75,7 +75,7 @@ class ConfigurationManager:
         params = self.params
 
         # Define the path to the training data
-        training_data = os.path.join(self.config.data_ingestion.unzip_dir, "Chest-CT-Scan-data")
+        training_data = os.path.join(self.config.data_ingestion.unzip_dir, "Data")
 
         # Create necessary directories for training
         create_directories([
@@ -102,7 +102,9 @@ class ConfigurationManager:
         # Initialize the EvaluationConfig with relevant parameters
         eval_config = EvaluationConfig(
             path_of_model="artifacts/training/model.h5",
-            training_data="artifacts/data_ingestion/Chest-CT-Scan-data",
+            # training_data="artifacts/data_ingestion/Chest-CT-Scan-data",
+            validation_data_dir="artifacts/data_ingestion/Data/valid",
+            training_data="artifacts/data_ingestion/Data/train",
             mlflow_uri="https://dagshub.com/muhammadadilnaeem/Chest-Cancer-Classification-Using-MLflow-and-DVC.mlflow",
             all_params=self.params,
             params_image_size=self.params.IMAGE_SIZE,

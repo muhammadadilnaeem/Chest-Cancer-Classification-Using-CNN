@@ -58,7 +58,7 @@ class PrepareBaseModel:
         full_model.compile(
             optimizer=tf.keras.optimizers.SGD(learning_rate=learning_rate),  # Stochastic Gradient Descent optimizer
             loss=tf.keras.losses.CategoricalCrossentropy(),  # Loss function for multi-class classification
-            metrics=["accuracy"]  # Track accuracy during training
+            metrics = ["accuracy"]  # Track accuracy during training with these 3 metrics
         )
 
         # Print the model summary to the console
