@@ -12,11 +12,10 @@ BATCH_SIZE: 16
 INCLUDE_TOP: False  # Useful when using transfer learning without the top layer
 
 # Number of epochs for training the model
-EPOCHS: 5
+EPOCHS: 1
 
 # Number of classes in the classification task
-# CLASSES: 2  # Example: binary classification (e.g., 0 and 1)
-CLASSES: 4 # Example: MULTI-CLASS classification (e.g., 0,1,2,3)
+CLASSES: 2  # Example: binary classification (e.g., 0 and 1)
 
 # Pre-trained weights to use for the model
 WEIGHTS: imagenet  # This indicates using ImageNet weights for transfer learning

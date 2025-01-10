@@ -24,7 +24,8 @@ class Evaluation:
         """
         # Arguments for data normalization
         datagenerator_kwargs = dict(
-            rescale=1.0 / 255  # Normalize pixel values to [0, 1]
+            rescale=1.0 / 255,  # Normalize pixel values to [0, 1]
+            validation_split=0.30
         )
 
         # Arguments for image resizing and batching
@@ -39,9 +40,9 @@ class Evaluation:
 
         # Generate validation data batches from the specified directory
         self.valid_generator = valid_datagenerator.flow_from_directory(
-            directory=self.config.validation_data_dir,  # Path to validation data directory
+            directory=self.config.training_data, # Path to validation data directory
+            subset="validation",
             shuffle=False,  # No shuffling for consistent evaluation
-            class_mode="sparse",  # Use sparse mode for integer labels
             **dataflow_kwargs
         )
 
@@ -64,9 +65,9 @@ class Evaluation:
 
         # Compile the model with updated metrics
         self.model.compile(
-            optimizer="adam",  # Adam optimizer
-            loss="sparse_categorical_crossentropy",  # Loss for multi-class classification
-            metrics=["accuracy"]  # Updated metrics
+        optimizer="adam",  # Adam optimizer
+        loss="binary_crossentropy",  # Loss for binary classification
+        metrics=["accuracy"]  # Updated metrics
         )
 
         # Prepare the validation data generator
@@ -103,11 +104,11 @@ class Evaluation:
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
         # Set the experiment name
-        experiment_name = "Multi Class Classification Model Evaluation"
+        experiment_name = "Binary Class Classification Model Evaluation"
         mlflow.set_experiment(experiment_name)
 
         # Start a new MLflow run
-        with mlflow.start_run(run_name="Multi Class Classification"):
+        with mlflow.start_run(run_name="Binary Class Classification"):
             # Log all hyperparameters from the configuration
             mlflow.log_params(self.config.all_params)
 

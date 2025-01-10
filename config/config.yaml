@@ -8,8 +8,8 @@ data_ingestion:
   # Directory where data ingestion artifacts will be stored
   root_dir: artifacts/data_ingestion
   # URL to the source file containing the dataset (in this case, a Google Drive link)
-  # source_URL: https://drive.google.com/file/d/1z0mreUtRmR-P-magILsDR3T7M6IkGXtY/view?usp=sharing # for binary classification
-  source_URL: https://drive.google.com/file/d/1V18OgY4vvoUY1Wu0YZZzcD8U-vxKLFu9/view?usp=sharing   # for multi class classification
+  source_URL: https://drive.google.com/file/d/1z0mreUtRmR-P-magILsDR3T7M6IkGXtY/view?usp=sharing # for binary classification
+  #source_URL: https://drive.google.com/file/d/1V18OgY4vvoUY1Wu0YZZzcD8U-vxKLFu9/view?usp=sharing   # for multi class classification
   # Path where the downloaded data file will be saved locally
   local_data_file: artifacts/data_ingestion/data.zip
   # Directory where the unzipped data will be stored

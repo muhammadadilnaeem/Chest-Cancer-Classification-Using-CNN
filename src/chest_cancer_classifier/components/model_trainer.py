@@ -9,7 +9,7 @@ from zipfile import ZipFile
 import urllib.request as request
 from chest_cancer_classifier.entity.config_entity import TrainingConfig
 
-# for multi class classification
+
 
 class Training:
     def __init__(self, config: TrainingConfig):
@@ -30,7 +30,7 @@ class Training:
         # Compile the model with optimizer, loss, and metrics
         self.model.compile(
             optimizer=tf.keras.optimizers.Adam(),  # Adam optimizer for training
-            loss='sparse_categorical_crossentropy',  # Loss function for classification
+            loss="binary_crossentropy",  # Loss for binary classification
             metrics = ["accuracy"]  # Metrics to track model performance
         )
 
@@ -40,7 +40,8 @@ class Training:
         """
         # Arguments for data preprocessing
         datagenerator_kwargs = dict(
-            rescale=1.0 / 255  # Normalize pixel values to [0, 1]
+            rescale=1.0 / 255,  # Normalize pixel values to [0, 1]
+            validation_split=0.20
         )
 
         # Arguments for image resizing and batching
@@ -55,9 +56,9 @@ class Training:
             **datagenerator_kwargs
         )
         self.valid_generator = valid_datagenerator.flow_from_directory(
-            directory=os.path.join(self.config.training_data, "valid"),  # Path to validation data
+            directory=self.config.training_data,
+            subset="validation",
             shuffle=False,  # No shuffling for validation data
-            class_mode="sparse",  # Sparse mode for integer labels
             **dataflow_kwargs
         )
 
@@ -75,25 +76,12 @@ class Training:
             )
         else:
             # Simple generator without augmentation
-            train_datagenerator = tf.keras.preprocessing.image.ImageDataGenerator(
-                **datagenerator_kwargs
-            )
+            train_datagenerator = valid_datagenerator
 
         self.train_generator = train_datagenerator.flow_from_directory(
-            directory=os.path.join(self.config.training_data, "train"),  # Path to training data
+            directory=self.config.training_data,
+            subset="training",
             shuffle=True,  # Shuffle training data
-            class_mode="sparse",  # Sparse mode for integer labels
-            **dataflow_kwargs
-        )
-
-        # Test data generator using 'test' folder
-        test_datagenerator = tf.keras.preprocessing.image.ImageDataGenerator(
-            **datagenerator_kwargs
-        )
-        self.test_generator = test_datagenerator.flow_from_directory(
-            directory=os.path.join(self.config.training_data, "test"),  # Path to test data
-            shuffle=False,  # No shuffling for test data
-            class_mode="sparse",  # Sparse mode for integer labels
             **dataflow_kwargs
         )
 
