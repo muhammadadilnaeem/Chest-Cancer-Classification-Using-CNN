@@ -270,6 +270,22 @@
 # zipp==3.20.2
 
 
-streamlit==1.40.0
-numpy==2.0.2
-tensorflow==2.18.0
+tensorflow==2.12.0
+pandas 
+gdown
+dvc
+mlflow==2.2.2
+notebook
+numpy
+matplotlib
+seaborn
+python-box==6.0.2
+pyYAML
+tqdm
+ensure==1.0.2
+joblib
+types-PyYAML
+scipy
+Flask
+Flask-Cors
+-e .
