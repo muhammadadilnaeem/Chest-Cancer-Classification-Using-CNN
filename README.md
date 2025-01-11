@@ -87,4 +87,8 @@ Setting up Conda in a GitHub Codespace for data science is straightforward. Foll
     ```bash
     streamlit run streamlit.py
     ```
-- 
+- Use this url as it is  working
+
+```bash
+https://the-chest-cancer-classification-adil-naeem.streamlit.app/
+```
