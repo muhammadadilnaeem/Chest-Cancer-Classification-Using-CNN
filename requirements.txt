@@ -270,11 +270,10 @@
 # zipp==3.20.2
 
 
-tensorflow==2.12.0
+tensorflow
 pandas 
 gdown
 dvc
-mlflow==2.2.2
 notebook
 numpy
 matplotlib
