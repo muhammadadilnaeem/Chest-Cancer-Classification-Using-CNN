@@ -57,6 +57,25 @@ Setting up Conda in a GitHub Codespace for data science is straightforward. Foll
     ```bash
     pip install -r requirements.txt 
     ```   
+    - Ensure that setuptools is up-to-date in your environment:
+
+    ```bash
+    pip install --upgrade setuptools
+    ```
+
+    - The issue may stem from a version mismatch between mlflow and setuptools. You can try downgrading mlflow to a version compatible with your setup:
+
+    ```bash
+    pip install mlflow==2.4.2
+    ```
+    
+    - Since distutils has been removed, you can try installing a backported version:
+
+    ```bash
+    pip install distlib
+    ``` 
+
+
 7. Now in order to run the whole pipeline run this command;
 
     ```bash
@@ -68,3 +87,4 @@ Setting up Conda in a GitHub Codespace for data science is straightforward. Foll
     ```bash
     streamlit run streamlit.py
     ```
+- 
